@@ -1,0 +1,80 @@
+
+<div class="container  rounded shadow border-primary w-50 mx-auto p-4 my-5">
+    <div class="mb-2 mt-5">
+        <h3 class="text-center text-primary">Contact App</h3>
+        <input type="text/number" class="form-control py-4 my-4" disabled [(ngModel)]="pNumber">
+        <div class="row   mx-auto p-2">
+                <button class="btn btn-secondary material-symbols-outlined col mx-1 text-primary" (click)="clear()"> backspace</button>
+                <a routerLink="/contacts" class="btn btn-Primary material-symbols-outlined col mx-1 text-dark"> Contacts</a>
+
+                <button class="btn btn-info col mx-1 material-symbols-outlined text-light" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add</button>
+            </div>
+    </div>
+    <div class="px-2">
+        <div class="row mb-2">
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(1)">1 <br><small><i class="material-icons">voicemail</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(2)">2 <br><small><i class="">abc</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(3)">3 <br><small><i class="">def</i></small></div>
+        </div>
+        <div class="row mb-2">
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(4)">4 <br> <small><i class="">ghi</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(5)">5 <br> <small><i class="">jkl</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(6)">6 <br> <small><i class="">mno</i></small></div>
+        </div>
+        <div class="row mb-2">
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(7)">7 <br> <small><i class="">pqrs</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(8)">8 <br> <small><i class="">tuv</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(9)">9 <br><small><i class="">wxyz</i></small></div>
+        </div>
+        <div class="row mb-2">
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num('*')">*</div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num(0)">0 <br><small><i class="material-icons">add</i></small></div>
+            <div class="col border text-center mx-2 shadow rounded p-2 btn btn-outline-primary" type="button" (click)="num('#')">#</div>
+        </div>
+    </div>
+</div>
+    <!-- modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button> -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button> -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New contact</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     
+          <div class="mb-3">
+            <label for="firstname" class="col-form-label">First Name:</label>
+            <input type="text" [(ngModel)]="firstname" class="form-control" id="recipient-name">
+
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Last Name:</label>
+            <input type="text" [(ngModel)]="lastname" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Phone Number:</label>
+            <input type="text" value="{{pNumber}}" [(ngModel)]="phonenumber" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="Email" class="col-form-label">Email:</label>
+            <input type="email" [(ngModel)]="email" class="form-control" id="message-text">
+          </div>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn material-icons text-success"  (click)="addContact()" data-bs-dismiss="modal">add_circle</button>
+        <!-- <button type="button" class="btn material-icons text-success" data-bs-dismiss="modal" (click)="contactEvent.emit(eachContact)">add_circle</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Scrollable modal -->
+<!-- <div class="modal-dialog modal-dialog-scrollable">
+    ...
+  </div> -->
